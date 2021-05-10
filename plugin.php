@@ -11,26 +11,45 @@
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       RPS
+ * 
+ * 
+ *  @package racting-post-system
  */
 
-// Exit if accessed directly
+/**
+ * Exit if accessed directlyS.
+ *
+ * @since   1.0.0
+ */
 if( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-//  plugin folder path
+/**
+ * Plugin folder path.
+ *
+ * @since   1.0.0
+ */  
 if( !defined('RPS_PLUGIN_DIR') ) {
 	define( 'RPS_PLUGIN_DIR', wp_normalize_path( plugin_dir_path( __FILE__ ) ) );
 }
 
-// Plugin Folder URL.
+/**
+ * Plugin Folder URL.
+ *
+ * @since   1.0.0
+ */
 if ( ! defined( 'RPS_PLUGIN_URL' ) ) {
 	define( 'RPS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 }
 
 include 'functions.php';
 
-// Enqueue the scripts file
+/**
+ * Enqueue the scripts file.
+ *
+ * @since   1.0.0
+ */
 add_action( 'wp_enqueue_scripts', 'ldp_enqueue_files' );
 function ldp_enqueue_files() {
 	wp_enqueue_style( 'custom-RPS', RPS_PLUGIN_URL . '/assests/css/RPS.css' );
@@ -38,7 +57,11 @@ function ldp_enqueue_files() {
 	wp_localize_script( 'custom-RPS', 'rps_ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
-// Creating Post Reacting Tables
+/**
+ * Creating Post Reacting Tables.
+ *
+ * @since   1.0.0
+ */
 register_activation_hook( __FILE__, 'rps_reacting_table' );
 function rps_reacting_table() {
     global $wpdb;

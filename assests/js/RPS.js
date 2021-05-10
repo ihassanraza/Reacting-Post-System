@@ -3,7 +3,7 @@ jQuery(document).ready(function(){
     jQuery('.rct-love').click(function(){
         var post_id = jQuery(this).data('id');
         var user_name = jQuery(this).data('uname');
-        var love_val = jQuery('.rct-love').val();
+        var love_val = jQuery(this).val();
         jQuery.ajax({
             url : rps_ajax_object.ajax_url,
             type : 'post',
@@ -25,7 +25,7 @@ jQuery(document).ready(function(){
     jQuery('.rct-like').click(function(){
         var post_id = jQuery(this).data('id');
         var user_name = jQuery(this).data('uname');
-        var like_val = jQuery('.rct-like').val();
+        var like_val = jQuery(this).val();
         jQuery.ajax({
             url : rps_ajax_object.ajax_url,
             type : 'post',
@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
     jQuery('.rct-ok').click(function(){
         var post_id = jQuery(this).data('id');
         var user_name = jQuery(this).data('uname');
-        var ok_val = jQuery('.rct-ok').val();
+        var ok_val = jQuery(this).val();
         jQuery.ajax({
             url : rps_ajax_object.ajax_url,
             type : 'post',
@@ -69,7 +69,7 @@ jQuery(document).ready(function(){
     jQuery('.rct-dislike').click(function(){
         var post_id = jQuery(this).data('id');
         var user_name = jQuery(this).data('uname');
-        var dislike_val = jQuery('.rct-dislike').val();
+        var dislike_val = jQuery(this).val();
         jQuery.ajax({
             url : rps_ajax_object.ajax_url,
             type : 'post',
@@ -91,7 +91,7 @@ jQuery(document).ready(function(){
     jQuery('.rct-hate').click(function(){
         var post_id = jQuery(this).data('id');
         var user_name = jQuery(this).data('uname');
-        var hate_val = jQuery('.rct-hate').val();
+        var hate_val = jQuery(this).val();
         jQuery.ajax({
             url : rps_ajax_object.ajax_url,
             type : 'post',
