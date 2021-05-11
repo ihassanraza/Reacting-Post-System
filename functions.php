@@ -25,7 +25,7 @@ class RPS {
 		$ok_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_ok_count = 1" );
 		$dislike_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_dislike_count = 1" );
 		$hate_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_hate_count = 1" );
-		$lchecked = '';
+		$lchecked  = '';
 		$lkchecked = '';
 		$okchecked = '';
 		$dkchecked = '';
@@ -116,7 +116,7 @@ class RPS {
 		if ( isset($user_name) && isset($post_id) ) {
 			$check_like = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE user_name='$user_name' AND post_id='$post_id'" );
 			if ( $check_like > 0 ) {
-				echo "<center>".__( 'You already love this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'You already reacted to this post.', 'RPS' )."</center>";
 			}
 			else {
 				$wpdb->insert(
@@ -138,7 +138,7 @@ class RPS {
 				);
 			}
 			if ( $wpdb->insert_id ) {
-				echo "<center>".__( 'Thank You for loving this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'Thank You for giving valuable feedback to this post.', 'RPS' )."</center>";
 			}
 		}
 		wp_die();
@@ -159,7 +159,7 @@ class RPS {
 		if ( isset($user_name) && isset($post_id) ) {
 			$check_like = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE user_name='$user_name' AND post_id='$post_id'" );
 			if ( $check_like > 0 ) {
-				echo "<center>".__( 'You already like this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'You already reacted to this post.', 'RPS' )."</center>";
 			}
 			else {
 				$wpdb->insert(
@@ -181,7 +181,7 @@ class RPS {
 				);
 			}
 			if ( $wpdb->insert_id ) {
-				echo "<center>".__( 'Thank You for like this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'Thank You for giving valuable feedback to this post.', 'RPS' )."</center>";
 			}
 		}
 		wp_die();
@@ -202,7 +202,7 @@ class RPS {
 		if ( isset($user_name) && isset($post_id) ) {
 			$check_like = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE user_name='$user_name' AND post_id='$post_id'" );
 			if ( $check_like > 0 ) {
-				echo "<center>".__( 'You already give your postive feedback on this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'You already reacted to this post.', 'RPS' )."</center>";
 			}
 			else {
 				$wpdb->insert(
@@ -224,7 +224,7 @@ class RPS {
 				);
 			}
 			if($wpdb->insert_id){
-				echo "<center>".__( 'Thank You for giving the postive fedback on this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'Thank You for giving valuable feedback to this post.', 'RPS' )."</center>";
 			}
 		}
 		wp_die();
@@ -245,7 +245,7 @@ class RPS {
 		if ( isset($user_name) && isset($post_id) ) {
 			$check_like = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE user_name='$user_name' AND post_id='$post_id'" );
 			if ( $check_like > 0 ) {
-				echo "<center>".__( 'You already dislike this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'You already reacted to this post.', 'RPS' )."</center>";
 			}
 			else {
 				$wpdb->insert(
@@ -267,7 +267,7 @@ class RPS {
 				);
 			}
 			if ( $wpdb->insert_id ) {
-				echo "<center>".__( 'Thank You for dislike our post.' , 'RPS' )."</center>";
+				echo "<center>".__( 'Thank You for giving valuable feedback to this post.' , 'RPS' )."</center>";
 			}
 		}
 		wp_die();
@@ -288,7 +288,7 @@ class RPS {
 		if ( isset($user_name) && isset($post_id) ) {
 			$check_like = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE user_name='$user_name' AND post_id='$post_id'" );
 			if ( $check_like > 0 ) {
-				echo "<center>".__( 'You already hate this post.', 'RPS' )."</center>";
+				echo "<center>".__( 'You already reacted to this post.', 'RPS' )."</center>";
 			}
 			else {
 				$wpdb->insert(
@@ -310,7 +310,7 @@ class RPS {
 				);
 			}
 			if ( $wpdb->insert_id ) {
-				echo "<center>".__('Thank You for hate our post', 'RPS')."</center>";
+				echo "<center>".__('Thank You for giving valuable feedback to this post.', 'RPS')."</center>";
 			}
 		}
 		wp_die();
@@ -349,36 +349,33 @@ class RPS {
 		$dislike_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_dislike_count = 1" );
 		$hate_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_hate_count = 1" );
 		?>
-		<table class="table table-bordered">
-			<thead>
-				<tr>
-					<th>User Rection</th>
-					<th>User Count</th>
-				</tr>
-			</thead>
-  			<tbody>
-   				<tr>
-      				<td><img src="https://image.flaticon.com/icons/svg/1933/1933691.svg" alt="Loved it" width="50" height="50"><span>Loved It</span></td>
-      				<td><?php echo $love_count; ?></td>
-    			</tr>
-				<tr>
-      				<td><img src="https://image.flaticon.com/icons/svg/1933/1933646.svg" alt="Liked it" width="50" height="50"><span>Liked it</span></td>
-      				<td><?php echo $like_count; ?></td>
-    			</tr>
-				<tr>
-      				<td><img src="https://image.flaticon.com/icons/svg/1933/1933511.svg" alt="It's OK" width="50" height="50"><span>It's OK</span></td>
-      				<td><?php echo $ok_count; ?></td>
-    			</tr>
-				<tr>
-      				<td><img src="https://image.flaticon.com/icons/svg/1933/1933115.svg" alt="Disliked it" width="50" height="50"><span>Disliked it</span></td>
-      				<td><?php echo $dislike_count; ?></td>
-    			</tr>
-				<tr>
-      				<td><img src="https://image.flaticon.com/icons/svg/1933/1933127.svg" alt="Hated it" width="50" height="50"><span>Hated it</span></td>
-      				<td><?php echo $hate_count; ?></td>
-    			</tr>
-  			</tbody>
-		</table>
+		<div class="users-reacting">
+		<div class="user-reaction">
+		<img src="https://image.flaticon.com/icons/svg/1933/1933691.svg" alt="Loved it" width="50" height="50">
+		<div class="title">Loved It</div>
+		<div class="user-count"><?php echo $love_count; ?></div>
+		</div>
+		<div class="user-reaction">
+		<img src="https://image.flaticon.com/icons/svg/1933/1933646.svg" alt="Liked it" width="50" height="50">
+		<div class="title">Liked it</div>
+		<div class="user-count"><?php echo $like_count; ?></div>
+		</div>
+		<div class="user-reaction">
+		<img src="https://image.flaticon.com/icons/svg/1933/1933511.svg" alt="It's OK" width="50" height="50">
+		<div class="title">It's OK</div>
+		<div class="user-count"><?php echo $ok_count; ?></div>
+		</div>
+		<div class="user-reaction">
+		<img src="https://image.flaticon.com/icons/svg/1933/1933115.svg" alt="Disliked it" width="50" height="50">
+		<div class="title">Disliked it</div>
+		<div class="user-count"><?php echo $dislike_count; ?></div>
+		</div>
+		<div class="user-reaction">
+		<img src="https://image.flaticon.com/icons/svg/1933/1933127.svg" alt="Hated it" width="50" height="50">
+		<div class="title">Hated it</div>
+		<div class="user-count"><?php echo $hate_count; ?></div>
+		</div>
+	</div>
 		<?php
 	}
 	
@@ -388,8 +385,7 @@ class RPS {
 	 * @since 1.0.0
 	 */
 	public function rps_filter_posts_pages_columns( $columns ) {
-		$columns['like-ratio'] = __( 'Postive Reacting', 'RPS' );
-		$columns['dislike-ratio'] = __( 'Negative Reacting', 'RPS' );
+		$columns['performance'] = __( 'Performance', 'RPS' );
 		return $columns;
 	}
 
@@ -409,22 +405,14 @@ class RPS {
 		$hate_count = $wpdb->get_var( "SELECT COUNT(*) FROM $table_name WHERE post_id = $post_id AND reacting_hate_count = 1" );
 		$like_prec = $love_count + $like_count + $ok_count;
 		$dislike_prec = $dislike_count + $hate_count;
-		if ( 'like-ratio' === $column ) {
-			if ( ( $like_prec == 0 ) && ( $dislike_prec == 0 ) ) {
-				echo __( 'No one reacted to your post', 'RPS' );
-			}
-			elseif ( $like_prec || $dislike_prec ) {
-				echo ( $like_prec / ( $dislike_prec + $like_prec ) ) * 100 . '%';
-			}
-		}
-
-		if ( 'dislike-ratio' === $column ) {
-			if ( ( $like_prec == 0 ) && ( $dislike_prec == 0 ) ) {
-				echo __( 'No one reacted to your post', 'RPS' );
-			}
-			elseif ( $dislike_prec || $like_prec ) {
-				echo ( $dislike_prec / ( $dislike_prec + $like_prec ) ) * 100 . '%';
-			}
+		if ( ($like_prec == 0) && ($dislike_prec == 0) ) {
+			echo '<samll><strong>No one reacted to your post.</strong></samll>';
+		} 
+		elseif ( 'performance' === $column ) {
+			echo '<img src="'.RPS_PLUGIN_URL.'assests/img/like.svg" alt="Postive Reacting">';
+			echo '<span class="performance-racting"><strong>'. ( $like_prec / ( $dislike_prec + $like_prec ) ) * 100 . '%' .'</strong></span>';
+			echo '<img src="'.RPS_PLUGIN_URL.'assests/img/dislike.svg" alt="Negative Reacting">';
+			echo '<span class="performance-racting"> <strong>'. ( $dislike_prec / ( $dislike_prec + $like_prec ) ) * 100 . '%' .'</strong></span>';
 		}
 	}
 

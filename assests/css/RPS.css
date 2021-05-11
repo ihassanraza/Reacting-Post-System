@@ -1,72 +1,78 @@
-/* body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  font-family: Roboto, sans-serif;
-  color: #fafafa;
-  background-color: #20152d;
-} */
-
 .rating {
   position: relative;
   display: flex;
   justify-content: center;
   flex-direction: row-reverse;
-
-  input {
-    appearance: none;
-  }
-
-  label {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 0;
-    height: 128px;
-    text-align: center;
-    transition: 0.4s;
-    filter: grayscale(100%);
-    cursor: pointer;
-    opacity: 0;
-  }
-
-  img {
-    margin-bottom: 12px;
-  }
-
-  span {
-    display: block;
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    transform: translatey(12px) scale(0.4);
-    font-weight: 600;
-    font-size: 20px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: 0.4s;
-  }
+  text-align: center;
 }
-
-.rating:hover {
-  label {
-    width: 160px;
-    opacity: 0.2;
-  }
+.rating input {
+  appearance: none;
 }
-
-.rating  {
-  input:hover + label,
-  input:checked + label {
-    width: 160px;
-    opacity: 1;
-    filter: grayscale(0);
-
-    span {
-      transform: none;
-      opacity: 1;
-    }
-  }
+.rating label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 128px;
+  transition: 0.4s;
+  filter: grayscale(100%);
+  cursor: pointer;
+}
+.rating span {
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translatey(12px) scale(0.4);
+  font-weight: 600;
+  font-size: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: 0.4s;
+}
+.rating:hover label {
+  width: 160px;
+  opacity: 0.2;
+}
+.rating input:hover + label, input:checked + label {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.rating input:hover + label span {
+  transform: none;
+  opacity: 1;
+}
+.rating input:hover + label, input:checked + label span {
+  transform: none;
+  opacity: 1;
+}
+.inside .users-reacting {
+  display: flex;
+  justify-content: center;
+}
+.user-reaction {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0px 20px;
+}
+.user-reaction .user-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+td.performance.column-performance {
+  display: flex;
+  align-items: center;
+} 
+.performance img {
+  width: 25px;
+  height: 25px;
+}
+span.performance-racting {
+  margin-inline: 20px;
 }

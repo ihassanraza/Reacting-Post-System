@@ -51,6 +51,7 @@ include 'functions.php';
  * @since   1.0.0
  */
 add_action( 'wp_enqueue_scripts', 'ldp_enqueue_files' );
+add_action( 'admin_init', 'ldp_enqueue_files' );
 function ldp_enqueue_files() {
 	wp_enqueue_style( 'custom-RPS', RPS_PLUGIN_URL . '/assests/css/RPS.css' );
 	wp_enqueue_script( 'custom-RPS', RPS_PLUGIN_URL . '/assests/js/RPS.js', array('jquery') );
