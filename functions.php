@@ -2,7 +2,7 @@
 /**
  * Class responsible for the RPS.
  *
- * @author    WP Square
+ * @author    Hassan Raza
  * @package   reacting-post-system
  */
 
