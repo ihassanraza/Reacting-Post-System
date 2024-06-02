@@ -1,13 +1,13 @@
 <?php
 /**
  * Plugin Name:       Reacting Post System
- * Plugin URI:        https://www.wp-sqr.com/
+ * Plugin URI:        https://www.linkedin.com/in/ihaxxanraza/
  * Description:       RPS is reacting for the posts.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
- * Author:            WP Square
- * Author URI:        https://www.wp-sqr.com/
+ * Author:            Hassan Raza
+ * Author URI:        https://www.linkedin.com/in/ihaxxanraza/
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       RPS
